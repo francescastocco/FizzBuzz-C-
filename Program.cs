@@ -6,7 +6,14 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string result;
+            for (int i=1; i <= 100; i++) {
+                result = i;
+                if(i%3 == 0) {
+                    result="Fizz";
+                }
+                Console.WriteLine(result);
+            }
         }
     }
 }
