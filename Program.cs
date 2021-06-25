@@ -8,7 +8,11 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i <= 100; i++)
+            Console.Write("Please enter max number:");
+            string maxNumberString = Console.ReadLine();
+            int maxNumber = int.Parse(maxNumberString);
+
+            for (int i = 1; i <= maxNumber; i++)
             {
                 var result = new ArrayList();
                 if (i % 3 == 0)
