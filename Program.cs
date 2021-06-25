@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Linq;
 
 namespace FizzBuzz
 {
@@ -8,25 +10,33 @@ namespace FizzBuzz
         {
             for (int i = 1; i <= 100; i++)
             {
-                //string[] result;
-                if (i % 3 == 0 && i % 5 == 0)
+                var result = new ArrayList();
+                if (i % 3 == 0)
                 {
-                    Console.WriteLine("FizzBuzz");
+                    result.Add("Fizz");
                 }
-                else if (i % 3 == 0)
+                if (i % 5 == 0)
                 {
-                    Console.WriteLine("Fizz");
+                    result.Add("Buzz");
                 }
-                else if (i % 5 == 0)
+                if (i % 7 == 0)
                 {
-                    Console.WriteLine("Buzz");
+                    result.Add("Bang");
+                }
+
+                if (result.Count == 0)
+                {
+                    Console.WriteLine(i);
                 }
                 else
                 {
-                    Console.WriteLine(i);
-
+                    var stringArray = result.Cast<string>().ToArray();
+                    var resultString = string.Join("", stringArray);
+                    Console.WriteLine(resultString);
                 }
             }
         }
     }
 }
+
+//https://github.com/techswitch-learners/fizzbuzz-csharp/blob/master/FizzBuzz/Program.cs
